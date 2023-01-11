@@ -1,43 +1,23 @@
 package TestCases;
 
+import Base.Base;
 import Utilities.Utils;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.edge.EdgeDriver;
-import org.openqa.selenium.firefox.FirefoxDriver;
-import org.openqa.selenium.safari.SafariDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
-import java.time.Duration;
-
-public class Login {
+public class Login extends Base {
 
     WebDriver driver;
 
     @BeforeMethod
     public void setup() {
-        String browserName = "chrome";
-
-        if (browserName.equals("chrome")) {
-            driver = new ChromeDriver();
-        } else if (browserName.equals("firefox")) {
-            driver = new FirefoxDriver();
-        } else if (browserName.equals("edge")) {
-            driver = new EdgeDriver();
-        } else if (browserName.equals("safari")) {
-            driver = new SafariDriver();
-        }
-
-        driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
-        driver.get("http://www.tutorialsninja.com/demo/");
+        driver = initializeBrowserAndUrl("edge");
         driver.findElement(By.xpath("//div[@id='top-links']//a[@title='My Account']/span[.='My Account']")).click();
-        driver.findElement(By.linkText("TestCases.Login")).click();
+        driver.findElement(By.linkText("Login")).click();
     }
 
     @AfterMethod
