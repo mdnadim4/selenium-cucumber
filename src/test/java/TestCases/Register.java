@@ -48,19 +48,18 @@ public class Register {
     @Test
     public void verifyRegisterWithRequiredFields() {
         driver.findElement(By.id("input-firstname")).sendKeys("William");
-        driver.findElement(By.id("input-firstname")).sendKeys("Smith");
+        driver.findElement(By.id("input-lastname")).sendKeys("Smith");
         driver.findElement(By.id("input-email")).sendKeys("test"+Utils.generateTimeStamp()+"@gmail.com");
         driver.findElement(By.id("input-telephone")).sendKeys("9085380500");
         driver.findElement(By.id("input-password")).sendKeys("test12345");
         driver.findElement(By.id("input-confirm")).sendKeys("test12345");
         driver.findElement(By.xpath("//input[@type=\"checkbox\"]")).click();
         driver.findElement(By.xpath("//input[@type=\"submit\"]")).click();
+        String url = driver.getCurrentUrl();
+
+        Assert.assertTrue(url.contains("http://tutorialsninja.com/demo/index.php?route=account/success"), "Success url is incorrect");
 
         String heading = driver.findElement(By.xpath("//div[@id='content']/h1")).getText();
-
-        Boolean url = driver.getCurrentUrl().contains("account/success");
-
-        Assert.assertTrue(url, "Success url is incorrect");
         Assert.assertTrue(heading.contains("Your Account Has Been Created!"), "Title heading is not match");
 
     }
