@@ -13,9 +13,13 @@ public class Login extends Base {
 
     WebDriver driver;
 
+    public Login() {
+        super();
+    }
+
     @BeforeMethod
     public void setup() {
-        driver = initializeBrowserAndUrl("edge");
+        driver = initializeBrowserAndUrl(prop.getProperty("browser"));
         driver.findElement(By.xpath("//div[@id='top-links']//a[@title='My Account']/span[.='My Account']")).click();
         driver.findElement(By.linkText("Login")).click();
     }

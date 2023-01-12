@@ -14,9 +14,13 @@ public class Register extends Base {
 
     WebDriver driver;
 
+    public Register() {
+        super();
+    }
+
     @BeforeMethod
     public void setup() {
-        driver = initializeBrowserAndUrl("edge");
+        driver = initializeBrowserAndUrl(prop.getProperty("browser"));
         driver.findElement(By.xpath("//div[@id='top-links']//a[@title='My Account']/span[.='My Account']")).click();
         driver.findElement(By.linkText("Register")).click();
     }

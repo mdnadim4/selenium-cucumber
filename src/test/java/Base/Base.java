@@ -7,11 +7,29 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.time.Duration;
+import java.util.Properties;
 
 public class Base {
 
     WebDriver driver;
+    public Properties prop;
+
+    public Base() {
+        prop = new Properties();
+        File file = new File("Config/config.properties");
+        try {
+            FileInputStream fis = new FileInputStream(file);
+            prop.load(fis);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
     public WebDriver initializeBrowserAndUrl(String browserName) {
 
         if (browserName.equals("chrome")) {
@@ -27,7 +45,7 @@ public class Base {
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
-        driver.get("http://www.tutorialsninja.com/demo/");
+        driver.get(prop.getProperty("url"));
 
         return driver;
 
