@@ -1,2 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd"><suite name="All Test Suite"><test verbose="2" preserve-order="true" name="C:/Users/Nadim/AquaProjects/selenium-ninja"><classes><class name="TestCases.Login"><methods><include name="verifyValidLogin"/><include name="verifyInvalidLogin"/><include name="verifyInvalidEmailAndValidPassword"/><include name="verifyValidEmailAndInvalidPassword"/><include name="verifyEmptyEmailAndPassword"/></methods></class><class name="TestCases.Register"><methods><include name="verifyRegisterWithRequiredFields"/><include name="verifyRegisterWithAllFields"/><include name="verifyRegWithExistingEmailAddress"/><include name="verifyRegisterWithEmptyData"/></methods></class><class name="TestCases.Search"><methods><include name="verifySearchWithValidProduct"/><include name="verifySearchWithInvalidProduct"/><include name="verifySearchWithEmptyData"/></methods></class></classes></test></suite>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true" name="C:/Users/Nadim/AquaProjects/selenium-ninja">
+        <classes>
+            <class name="TestCases.Login">
+                <methods>
+                    <include name="verifyValidLogin"/>
+                    <include name="verifyInvalidLogin"/>
+                    <include name="verifyInvalidEmailAndValidPassword"/>
+                    <include name="verifyValidEmailAndInvalidPassword"/>
+                    <include name="verifyEmptyEmailAndPassword"/>
+                </methods>
+            </class>
+            <class name="TestCases.Register">
+                <methods>
+                    <include name="verifyRegisterWithRequiredFields"/>
+                    <include name="verifyRegisterWithAllFields"/>
+                    <include name="verifyRegWithExistingEmailAddress"/>
+                    <include name="verifyRegisterWithEmptyData"/>
+                </methods>
+            </class>
+            <class name="TestCases.Search">
+                <methods>
+                    <include name="verifySearchWithValidProduct"/><include name="verifySearchWithInvalidProduct"/>
+                    <include name="verifySearchWithEmptyData"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

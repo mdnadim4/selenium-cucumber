@@ -18,7 +18,7 @@ public class Search extends Base {
 
     @BeforeMethod
     public void setup() {
-        driver = initializeBrowserAndUrl(prop.getProperty("browser"));
+        driver = initializeBrowserAndUrl(prop.getProperty("browserName"));
     }
 
     @AfterMethod
