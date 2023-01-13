@@ -20,7 +20,7 @@ public class Register extends Base {
 
     @BeforeMethod
     public void setup() {
-        driver = initializeBrowserAndUrl(prop.getProperty("browserName"));
+        driver = initializeBrowserAndUrl(prop.getProperty("browser"));
         driver.findElement(By.xpath("//div[@id='top-links']//a[@title='My Account']/span[.='My Account']")).click();
         driver.findElement(By.linkText("Register")).click();
     }
@@ -32,8 +32,8 @@ public class Register extends Base {
 
     @Test (priority = 1)
     public void verifyRegisterWithRequiredFields() {
-        driver.findElement(By.id("input-firstname")).sendKeys("William");
-        driver.findElement(By.id("input-lastname")).sendKeys("Smith");
+        driver.findElement(By.id("input-firstname")).sendKeys(prop.getProperty("firstName"));
+        driver.findElement(By.id("input-lastname")).sendKeys(prop.getProperty("lastName"));
         driver.findElement(By.id("input-email")).sendKeys("test"+Utils.generateTimeStamp()+"@gmail.com");
         driver.findElement(By.id("input-telephone")).sendKeys("9085380500");
         driver.findElement(By.id("input-password")).sendKeys("test12345");

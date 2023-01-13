@@ -19,7 +19,7 @@ public class Login extends Base {
 
     @BeforeMethod
     public void setup() {
-        driver = initializeBrowserAndUrl(prop.getProperty("browserName"));
+        driver = initializeBrowserAndUrl(prop.getProperty("browser"));
         driver.findElement(By.xpath("//div[@id='top-links']//a[@title='My Account']/span[.='My Account']")).click();
         driver.findElement(By.linkText("Login")).click();
     }

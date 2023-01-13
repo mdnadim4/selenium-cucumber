@@ -18,7 +18,7 @@ public class Base {
 
     public Base() {
         prop = new Properties();
-        File file = new File("Config/config.properties");
+        File file = new File("src/test/java/Config/config.properties");
         try {
             FileInputStream fis = new FileInputStream(file);
             prop.load(fis);
@@ -29,13 +29,13 @@ public class Base {
 
     public WebDriver initializeBrowserAndUrl(String browserName) {
 
-        if (browserName.equals("chrome")) {
+        if (browserName.equalsIgnoreCase("chrome")) {
             driver = new ChromeDriver();
-        } else if (browserName.equals("firefox")) {
+        } else if (browserName.equalsIgnoreCase("firefox")) {
             driver = new FirefoxDriver();
-        } else if (browserName.equals("edge")) {
+        } else if (browserName.equalsIgnoreCase("edge")) {
             driver = new EdgeDriver();
-        } else if (browserName.equals("safari")) {
+        } else if (browserName.equalsIgnoreCase("safari")) {
             driver = new SafariDriver();
         }
 
