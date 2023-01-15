@@ -1,6 +1,7 @@
 package TestCases;
 
 import Base.Base;
+import Pages.SearchPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
@@ -11,6 +12,7 @@ import org.testng.annotations.Test;
 public class Search extends Base {
 
     WebDriver driver;
+    SearchPage searchPage;
 
     public Search() {
         super();
@@ -19,6 +21,7 @@ public class Search extends Base {
     @BeforeMethod
     public void setup() {
         driver = initializeBrowserAndUrl(prop.getProperty("browser"));
+        searchPage = new SearchPage(driver);
     }
 
     @AfterMethod
@@ -28,29 +31,32 @@ public class Search extends Base {
 
     @Test (priority = 1)
     public void verifySearchWithValidProduct() {
-        driver.findElement(By.name("search")).sendKeys("HP");
-        driver.findElement(By.cssSelector(".btn.btn-default.btn-lg")).click();
+        searchPage.setInputSearch(dataProp.getProperty("validProduct"));
+        searchPage.clickOnSearchBtn();
 
-        String productTitle = driver.findElement(By.linkText("HP LP3065")).getText();
-        Assert.assertTrue(productTitle.contains("HP LP3065"), "Product title is not match");
+        // Verify search result
+        String searchResult = searchPage.verifySearchResultText();
+        Assert.assertTrue(searchResult.contains("HP LP3065"), "Product title is not match");
     }
 
     @Test (priority = 2)
     public void verifySearchWithInvalidProduct() {
-        driver.findElement(By.name("search")).sendKeys("Dell");
-        driver.findElement(By.cssSelector(".btn.btn-default.btn-lg")).click();
+        searchPage.setInputSearch(dataProp.getProperty("invalidProduct"));
+        searchPage.clickOnSearchBtn();
 
-        String actualMsg = driver.findElement(By.cssSelector("div#content > p:nth-of-type(2)")).getText();
-        Assert.assertTrue(actualMsg.contains("There is no product that matches the search criteria."), "Product search message is not display");
+        // Verify no search result
+        String noSearchResult = searchPage.verifyNoSearchResultText();
+        Assert.assertTrue(noSearchResult.contains("There is no product that matches the search criteria."), "Product search message is not display");
     }
 
     @Test (priority = 3)
     public void verifySearchWithEmptyData() {
-        driver.findElement(By.name("search")).sendKeys("");
-        driver.findElement(By.cssSelector(".btn.btn-default.btn-lg")).click();
+        searchPage.setInputSearch("");
+        searchPage.clickOnSearchBtn();
 
-        String actualMsg = driver.findElement(By.cssSelector("div#content > p:nth-of-type(2)")).getText();
-        Assert.assertTrue(actualMsg.contains("There is no product that matches the search criteria."), "Product search message is not display");
+        // Verify empty search result
+        String noSearchResult = searchPage.verifyNoSearchResultText();
+        Assert.assertTrue(noSearchResult.contains("There is no product that matches the search criteria."), "Product search message is not display");
     }
 
 }

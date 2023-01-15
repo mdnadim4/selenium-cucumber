@@ -1,5 +1,6 @@
 package Base;
 
+import Utilities.Utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -15,10 +16,21 @@ public class Base {
 
     WebDriver driver;
     public Properties prop;
+    public Properties dataProp;
 
     public Base() {
         prop = new Properties();
+        dataProp = new Properties();
         File file = new File("src/test/java/Config/config.properties");
+        File dataFile = new File("src/test/java/TestData/data.properties");
+
+        try {
+            FileInputStream dataFis = new FileInputStream(dataFile);
+            dataProp.load(dataFis);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
         try {
             FileInputStream fis = new FileInputStream(file);
             prop.load(fis);
@@ -27,21 +39,21 @@ public class Base {
         }
     }
 
-    public WebDriver initializeBrowserAndUrl(String browserName) {
+    public WebDriver initializeBrowserAndUrl(String browser) {
 
-        if (browserName.equalsIgnoreCase("chrome")) {
+        if (browser.equalsIgnoreCase("chrome")) {
             driver = new ChromeDriver();
-        } else if (browserName.equalsIgnoreCase("firefox")) {
+        } else if (browser.equalsIgnoreCase("firefox")) {
             driver = new FirefoxDriver();
-        } else if (browserName.equalsIgnoreCase("edge")) {
+        } else if (browser.equalsIgnoreCase("edge")) {
             driver = new EdgeDriver();
-        } else if (browserName.equalsIgnoreCase("safari")) {
+        } else if (browser.equalsIgnoreCase("safari")) {
             driver = new SafariDriver();
         }
 
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Utils.IMPLICIT_WAIT_TIME));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Utils.PAGE_LOAD_TIME));
         driver.get(prop.getProperty("url"));
 
         return driver;
