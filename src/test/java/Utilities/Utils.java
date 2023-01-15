@@ -24,11 +24,6 @@ public class Utils {
         return  customEmail;
     }
 
-    public static String getCurrentUrl() {
-        driver.getCurrentUrl();
-        return null;
-    }
-
     public static Object[][] getTestDataFromExcel(String sheetName) {
         XSSFWorkbook workbook = null;
         File excelFile = new File("src/test/java/TestData/TestData.xlsx");

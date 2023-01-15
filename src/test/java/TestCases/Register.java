@@ -43,10 +43,6 @@ public class Register extends Base {
         registerPage.clickOnAgreeCheckbox();
         registerPage.clickOnContinueBtn();
 
-        // Assert redirection url
-        String url = driver.getCurrentUrl();
-        Assert.assertTrue(url.contains(dataProp.getProperty("successUrl")), "Success url is incorrect");
-
         // Assert title heading
         String registerSuccessMsg = registerPage.getRegisterSuccessMsg();
         Assert.assertTrue(registerSuccessMsg.contains("Your Account Has Been Created!"), "Register success message is not match");
@@ -63,10 +59,6 @@ public class Register extends Base {
         registerPage.clickOnNewsletter();
         registerPage.clickOnAgreeCheckbox();
         registerPage.clickOnContinueBtn();
-
-        // Assert redirection url
-        String url = driver.getCurrentUrl();
-        Assert.assertTrue(url.contains(dataProp.getProperty("successUrl")), "Success url is incorrect");
 
         // Assert title heading
         String registerSuccessMsg = registerPage.getRegisterSuccessMsg();

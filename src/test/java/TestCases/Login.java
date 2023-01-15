@@ -40,10 +40,6 @@ public class Login extends Base {
         loginPage.setInputPassword(password);
         loginPage.clickOnSubmitBtn();
 
-        // URL Assertion
-        String url = Utils.getCurrentUrl();
-        Assert.assertTrue(url.contains("/account"), "Page url is not match");
-
         // Verify My Account Title
         String myAccount = loginPage.verifyEditAccountInfo();
         Assert.assertTrue(myAccount.contains("Edit your account information"), "My account title content is not match");

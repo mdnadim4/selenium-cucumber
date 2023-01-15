@@ -15,7 +15,7 @@ import java.util.Properties;
 public class Base {
 
     WebDriver driver;
-    public Properties prop;
+    public static Properties prop;
     public Properties dataProp;
 
     public Base() {
