@@ -3,7 +3,6 @@ package TestCases;
 import Base.Base;
 import Pages.LoginPage;
 import Utilities.Utils;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -11,12 +10,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class Login extends Base {
+public class LoginTest extends Base {
 
     WebDriver driver;
     LoginPage loginPage;
 
-    public Login() {
+    public LoginTest() {
         super();
     }
 

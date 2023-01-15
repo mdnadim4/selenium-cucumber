@@ -20,6 +20,7 @@ public class MyListeners implements ITestListener {
 
     ExtentReports extentReport;
     ExtentTest extentTest;
+    String testName;
     WebDriver driver;
 
     @Override
@@ -29,20 +30,18 @@ public class MyListeners implements ITestListener {
 
     @Override
     public void onTestStart(ITestResult result) {
-        String testName = result.getName();
+        testName = result.getName();
         extentTest = extentReport.createTest(testName);
         extentTest.log(Status.INFO, testName + " started executing");
     }
 
     @Override
     public void onTestSuccess(ITestResult result) {
-        String testName = result.getName();
         extentTest.log(Status.PASS, testName + " got successfully executed");
     }
 
     @Override
     public void onTestFailure(ITestResult result) {
-        String testName = result.getName();
         File src = ((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
         String dest = System.getProperty("user.dir") + "./Screenshots/" + testName + ".png";
 
@@ -59,7 +58,6 @@ public class MyListeners implements ITestListener {
 
     @Override
     public void onTestSkipped(ITestResult result) {
-        String testName = result.getName();
         extentTest.log(Status.INFO, result.getThrowable());
         extentTest.log(Status.SKIP, testName + " got skipped");
     }
@@ -68,7 +66,7 @@ public class MyListeners implements ITestListener {
     public void onFinish(ITestContext context) {
         extentReport.flush();
         try {
-            Desktop.getDesktop().browse(new File("Reports/ExtentReport.html").toURI());
+            Desktop.getDesktop().browse(new File(System.getProperty("user.dir") + "/src/test/java/Reports/ExtentReport.html").toURI());
         } catch (IOException e) {
             e.printStackTrace();
         }

@@ -10,12 +10,12 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 
-public class Register extends Base {
+public class RegisterTest extends Base {
 
     WebDriver driver;
     RegisterPage registerPage;
 
-    public Register() {
+    public RegisterTest() {
         super();
     }
 
