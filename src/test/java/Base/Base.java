@@ -3,9 +3,13 @@ package Base;
 import Utilities.Utils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.safari.SafariOptions;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -42,12 +46,19 @@ public class Base {
     public WebDriver initializeBrowserAndUrl(String browser) {
 
         if (browser.equalsIgnoreCase("chrome")) {
-            driver = new ChromeDriver();
+            ChromeOptions options = new ChromeOptions();
+            options.setHeadless(true);
+            driver = new ChromeDriver(options);
         } else if (browser.equalsIgnoreCase("firefox")) {
-            driver = new FirefoxDriver();
+            FirefoxOptions options = new FirefoxOptions();
+            options.setHeadless(true);
+            driver = new FirefoxDriver(options);
         } else if (browser.equalsIgnoreCase("edge")) {
-            driver = new EdgeDriver();
+            EdgeOptions options = new EdgeOptions();
+            options.setHeadless(true);
+            driver = new EdgeDriver(options);
         } else if (browser.equalsIgnoreCase("safari")) {
+            SafariOptions options = new SafariOptions();
             driver = new SafariDriver();
         }
 

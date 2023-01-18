@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary">Automation Test Report</span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Jan 16, 2023 03:43:06 AM</span></a>
+<a href="#"><span class="badge badge-primary">Jan 19, 2023 02:09:43 AM</span></a>
 </li>
 </ul>
 </div>
@@ -45,6 +45,11 @@
 <li class="nav-item dropdown" onclick="toggleView('test-view')">
 <a id="nav-test" class="dropdown-toggle" href="#">
 <span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('exception-view')">
+<a id="nav-exception" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bug"></i></span>
 </a>
 </li>
 <li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
@@ -67,6 +72,7 @@
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
 <ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
 <a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="skip" href="#"><span>Skip</span><span class="status warning"></span></a>
 <div class="dropdown-divider"></div>
 <a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
 </ul>
@@ -74,25 +80,25 @@
 </ul>
 </div>    <div class="test-list-wrapper scrollable">
       <ul class="test-list-item">
-        <li class="test-item"  status="pass" test-id="1"
+        <li class="test-item"  status="skip" test-id="1"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">verifySearchWithValidProduct</p>
             <p class="text-sm">
-              <span>3:43:17 AM</span> / <span>00:00:01:155</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>2:09:44 AM</span> / <span>00:00:00:021</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifySearchWithValidProduct</h5>
-<span class='badge badge-success'>01.16.2023 3:43:17 AM</span>
-<span class='badge badge-danger'>01.16.2023 3:43:18 AM</span>
-<span class='badge badge-default'>00:00:01:155</span>
+<h5 class="test-status text-skip">verifySearchWithValidProduct</h5>
+<span class='badge badge-success'>01.19.2023 2:09:44 AM</span>
+<span class='badge badge-danger'>01.19.2023 2:09:44 AM</span>
+<span class='badge badge-default'>00:00:00:021</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -104,16 +110,52 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>3:43:17 AM</td>
+        <td>2:09:44 AM</td>
         <td>
           verifySearchWithValidProduct started executing
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:43:18 AM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:44 AM</td>
         <td>
-          verifySearchWithValidProduct got successfully executed
+          <textarea readonly class="code-block">java.lang.IllegalStateException: The path to the driver executable The path to the driver executable must be set by the webdriver.edge.driver system property; for more information, see https://docs.microsoft.com/en-us/microsoft-edge/webdriver-chromium/. The latest version can be downloaded from https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+	at org.openqa.selenium.internal.Require$StateChecker.nonNull(Require.java:314)
+	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:149)
+	at org.openqa.selenium.edge.EdgeDriverService.access$000(EdgeDriverService.java:41)
+	at org.openqa.selenium.edge.EdgeDriverService$Builder.findDefaultExecutable(EdgeDriverService.java:244)
+	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:456)
+	at org.openqa.selenium.edge.EdgeDriver.<init>(EdgeDriver.java:46)
+	at Base.Base.initializeBrowserAndUrl(Base.java:59)
+	at TestCases.SearchTest.setup(SearchTest.java:22)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:823)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:590)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:09:44 AM</td>
+        <td>
+          verifySearchWithValidProduct got skipped
         </td>
       </tr>
   </tbody>
@@ -121,25 +163,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="2"
+        <li class="test-item"  status="skip" test-id="2"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">verifySearchWithInvalidProduct</p>
             <p class="text-sm">
-              <span>3:43:28 AM</span> / <span>00:00:00:994</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>2:09:44 AM</span> / <span>00:00:00:007</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifySearchWithInvalidProduct</h5>
-<span class='badge badge-success'>01.16.2023 3:43:28 AM</span>
-<span class='badge badge-danger'>01.16.2023 3:43:29 AM</span>
-<span class='badge badge-default'>00:00:00:994</span>
+<h5 class="test-status text-skip">verifySearchWithInvalidProduct</h5>
+<span class='badge badge-success'>01.19.2023 2:09:44 AM</span>
+<span class='badge badge-danger'>01.19.2023 2:09:44 AM</span>
+<span class='badge badge-default'>00:00:00:007</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -151,16 +193,52 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>3:43:28 AM</td>
+        <td>2:09:44 AM</td>
         <td>
           verifySearchWithInvalidProduct started executing
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:43:29 AM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:44 AM</td>
         <td>
-          verifySearchWithInvalidProduct got successfully executed
+          <textarea readonly class="code-block">java.lang.IllegalStateException: The path to the driver executable The path to the driver executable must be set by the webdriver.edge.driver system property; for more information, see https://docs.microsoft.com/en-us/microsoft-edge/webdriver-chromium/. The latest version can be downloaded from https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+	at org.openqa.selenium.internal.Require$StateChecker.nonNull(Require.java:314)
+	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:149)
+	at org.openqa.selenium.edge.EdgeDriverService.access$000(EdgeDriverService.java:41)
+	at org.openqa.selenium.edge.EdgeDriverService$Builder.findDefaultExecutable(EdgeDriverService.java:244)
+	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:456)
+	at org.openqa.selenium.edge.EdgeDriver.<init>(EdgeDriver.java:46)
+	at Base.Base.initializeBrowserAndUrl(Base.java:59)
+	at TestCases.SearchTest.setup(SearchTest.java:22)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:823)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:590)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:09:44 AM</td>
+        <td>
+          verifySearchWithInvalidProduct got skipped
         </td>
       </tr>
   </tbody>
@@ -168,25 +246,25 @@
 </div>
           </div>
         </li>
-        <li class="test-item"  status="pass" test-id="3"
+        <li class="test-item"  status="skip" test-id="3"
           author=""
           tag=""
           device="">
           <div class="test-detail">
             <p class="name">verifySearchWithEmptyData</p>
             <p class="text-sm">
-              <span>3:43:39 AM</span> / <span>00:00:01:020</span>
-              <span class="badge pass-bg log float-right">Pass</span>
+              <span>2:09:44 AM</span> / <span>00:00:00:002</span>
+              <span class="badge skip-bg log float-right">Skip</span>
             </p>
           </div>
           <div class="test-contents d-none">
 <div class="detail-head">
 <div class="p-v-10">
 <div class="info">
-<h5 class="test-status text-pass">verifySearchWithEmptyData</h5>
-<span class='badge badge-success'>01.16.2023 3:43:39 AM</span>
-<span class='badge badge-danger'>01.16.2023 3:43:40 AM</span>
-<span class='badge badge-default'>00:00:01:020</span>
+<h5 class="test-status text-skip">verifySearchWithEmptyData</h5>
+<span class='badge badge-success'>01.19.2023 2:09:44 AM</span>
+<span class='badge badge-danger'>01.19.2023 2:09:44 AM</span>
+<span class='badge badge-default'>00:00:00:002</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -198,16 +276,569 @@
   <tbody>
       <tr class="event-row">
         <td><span class="badge log info-bg">Info</span></td>
-        <td>3:43:39 AM</td>
+        <td>2:09:44 AM</td>
         <td>
           verifySearchWithEmptyData started executing
         </td>
       </tr>
       <tr class="event-row">
-        <td><span class="badge log pass-bg">Pass</span></td>
-        <td>3:43:40 AM</td>
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:44 AM</td>
         <td>
-          verifySearchWithEmptyData got successfully executed
+          <textarea readonly class="code-block">java.lang.IllegalStateException: The path to the driver executable The path to the driver executable must be set by the webdriver.edge.driver system property; for more information, see https://docs.microsoft.com/en-us/microsoft-edge/webdriver-chromium/. The latest version can be downloaded from https://developer.microsoft.com/en-us/microsoft-edge/tools/webdriver/
+	at org.openqa.selenium.internal.Require$StateChecker.nonNull(Require.java:314)
+	at org.openqa.selenium.remote.service.DriverService.findExecutable(DriverService.java:149)
+	at org.openqa.selenium.edge.EdgeDriverService.access$000(EdgeDriverService.java:41)
+	at org.openqa.selenium.edge.EdgeDriverService$Builder.findDefaultExecutable(EdgeDriverService.java:244)
+	at org.openqa.selenium.remote.service.DriverService$Builder.build(DriverService.java:456)
+	at org.openqa.selenium.edge.EdgeDriver.<init>(EdgeDriver.java:46)
+	at Base.Base.initializeBrowserAndUrl(Base.java:59)
+	at TestCases.SearchTest.setup(SearchTest.java:22)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:69)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurationMethod(ConfigInvoker.java:361)
+	at org.testng.internal.invokers.ConfigInvoker.invokeConfigurations(ConfigInvoker.java:296)
+	at org.testng.internal.invokers.TestInvoker.runConfigMethods(TestInvoker.java:823)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:590)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:221)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:969)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:194)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1136)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:635)
+	at java.base/java.lang.Thread.run(Thread.java:833)
+</textarea>
+          
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log skip-bg">Skip</span></td>
+        <td>2:09:44 AM</td>
+        <td>
+          verifySearchWithEmptyData got skipped
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyValidLogin</p>
+            <p class="text-sm">
+              <span>2:09:55 AM</span> / <span>00:00:00:000</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyValidLogin</h5>
+<span class='badge badge-success'>01.19.2023 2:09:55 AM</span>
+<span class='badge badge-danger'>01.19.2023 2:09:55 AM</span>
+<span class='badge badge-default'>00:00:00:000</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:55 AM</td>
+        <td>
+          verifyValidLogin started executing
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyRegisterWithRequiredFields</p>
+            <p class="text-sm">
+              <span>2:09:56 AM</span> / <span>00:00:01:627</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyRegisterWithRequiredFields</h5>
+<span class='badge badge-success'>01.19.2023 2:09:56 AM</span>
+<span class='badge badge-danger'>01.19.2023 2:09:57 AM</span>
+<span class='badge badge-default'>00:00:01:627</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:09:56 AM</td>
+        <td>
+          verifyRegisterWithRequiredFields started executing
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:09:56 AM</td>
+        <td>
+          verifyRegisterWithRequiredFields got successfully executed
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:09:57 AM</td>
+        <td>
+          verifyRegisterWithRequiredFields got successfully executed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyValidLogin</p>
+            <p class="text-sm">
+              <span>2:10:01 AM</span> / <span>00:00:00:564</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyValidLogin</h5>
+<span class='badge badge-success'>01.19.2023 2:10:01 AM</span>
+<span class='badge badge-danger'>01.19.2023 2:10:02 AM</span>
+<span class='badge badge-default'>00:00:00:564</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:01 AM</td>
+        <td>
+          verifyValidLogin started executing
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:10:02 AM</td>
+        <td>
+          verifyValidLogin got successfully executed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyRegisterWithAllFields</p>
+            <p class="text-sm">
+              <span>2:10:04 AM</span> / <span>00:00:01:324</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyRegisterWithAllFields</h5>
+<span class='badge badge-success'>01.19.2023 2:10:04 AM</span>
+<span class='badge badge-danger'>01.19.2023 2:10:05 AM</span>
+<span class='badge badge-default'>00:00:01:324</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:04 AM</td>
+        <td>
+          verifyRegisterWithAllFields started executing
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:10:05 AM</td>
+        <td>
+          verifyRegisterWithAllFields got successfully executed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyRegWithExistingEmailAddress</p>
+            <p class="text-sm">
+              <span>2:10:10 AM</span> / <span>00:00:00:944</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyRegWithExistingEmailAddress</h5>
+<span class='badge badge-success'>01.19.2023 2:10:10 AM</span>
+<span class='badge badge-danger'>01.19.2023 2:10:11 AM</span>
+<span class='badge badge-default'>00:00:00:944</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:10 AM</td>
+        <td>
+          verifyRegWithExistingEmailAddress started executing
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:10:11 AM</td>
+        <td>
+          verifyRegWithExistingEmailAddress got successfully executed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="9"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyValidLogin</p>
+            <p class="text-sm">
+              <span>2:10:15 AM</span> / <span>00:00:00:973</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyValidLogin</h5>
+<span class='badge badge-success'>01.19.2023 2:10:15 AM</span>
+<span class='badge badge-danger'>01.19.2023 2:10:16 AM</span>
+<span class='badge badge-default'>00:00:00:973</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:15 AM</td>
+        <td>
+          verifyValidLogin started executing
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:10:16 AM</td>
+        <td>
+          verifyValidLogin got successfully executed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="10"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyRegisterWithEmptyData</p>
+            <p class="text-sm">
+              <span>2:10:19 AM</span> / <span>00:00:00:867</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyRegisterWithEmptyData</h5>
+<span class='badge badge-success'>01.19.2023 2:10:19 AM</span>
+<span class='badge badge-danger'>01.19.2023 2:10:19 AM</span>
+<span class='badge badge-default'>00:00:00:867</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:19 AM</td>
+        <td>
+          verifyRegisterWithEmptyData started executing
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:10:19 AM</td>
+        <td>
+          verifyRegisterWithEmptyData got successfully executed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="11"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyInvalidLogin</p>
+            <p class="text-sm">
+              <span>2:10:22 AM</span> / <span>00:00:00:462</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyInvalidLogin</h5>
+<span class='badge badge-success'>01.19.2023 2:10:22 AM</span>
+<span class='badge badge-danger'>01.19.2023 2:10:23 AM</span>
+<span class='badge badge-default'>00:00:00:462</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:22 AM</td>
+        <td>
+          verifyInvalidLogin started executing
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:10:23 AM</td>
+        <td>
+          verifyInvalidLogin got successfully executed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="12"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyInvalidEmailAndValidPassword</p>
+            <p class="text-sm">
+              <span>2:10:30 AM</span> / <span>00:00:00:491</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyInvalidEmailAndValidPassword</h5>
+<span class='badge badge-success'>01.19.2023 2:10:30 AM</span>
+<span class='badge badge-danger'>01.19.2023 2:10:30 AM</span>
+<span class='badge badge-default'>00:00:00:491</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:30 AM</td>
+        <td>
+          verifyInvalidEmailAndValidPassword started executing
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:10:30 AM</td>
+        <td>
+          verifyInvalidEmailAndValidPassword got successfully executed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="13"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyValidEmailAndInvalidPassword</p>
+            <p class="text-sm">
+              <span>2:10:36 AM</span> / <span>00:00:00:594</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyValidEmailAndInvalidPassword</h5>
+<span class='badge badge-success'>01.19.2023 2:10:36 AM</span>
+<span class='badge badge-danger'>01.19.2023 2:10:36 AM</span>
+<span class='badge badge-default'>00:00:00:594</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:36 AM</td>
+        <td>
+          verifyValidEmailAndInvalidPassword started executing
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:10:36 AM</td>
+        <td>
+          verifyValidEmailAndInvalidPassword got successfully executed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="14"
+          author=""
+          tag=""
+          device="">
+          <div class="test-detail">
+            <p class="name">verifyEmptyEmailAndPassword</p>
+            <p class="text-sm">
+              <span>2:10:45 AM</span> / <span>00:00:00:663</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyEmptyEmailAndPassword</h5>
+<span class='badge badge-success'>01.19.2023 2:10:45 AM</span>
+<span class='badge badge-danger'>01.19.2023 2:10:45 AM</span>
+<span class='badge badge-default'>00:00:00:663</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>2:10:45 AM</td>
+        <td>
+          verifyEmptyEmailAndPassword started executing
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>2:10:45 AM</td>
+        <td>
+          verifyEmptyEmailAndPassword got successfully executed
         </td>
       </tr>
   </tbody>
@@ -224,24 +855,87 @@
 </div>
 <div class="test-content-detail"><div class="detail-body"></div></div>
 </div></div>
-<div class="container-fluid p-4 view dashboard-view">
+<div class="test-wrapper row view exception-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Exception</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-skip'>3</span>
+</span>
+<p class="name">java.lang.IllegalStateException</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>java.lang.IllegalStateException</h4>
+<span status="skip" class='badge log badge-skip'>3 skipped</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>02:09:44 AM</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>verifySearchWithValidProduct</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>02:09:44 AM</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>verifySearchWithInvalidProduct</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="skip">
+<td><span class="badge log skip-bg">Skip</span></td>
+<td>02:09:44 AM</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>verifySearchWithEmptyData</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="container-fluid p-4 view dashboard-view">
 <div class="row">
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Jan 16, 2023 03:43:06 AM</h3>
+<h3>Jan 19, 2023 02:09:43 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Jan 16, 2023 03:43:40 AM</h3>
+<h3>Jan 19, 2023 02:10:45 AM</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0 text-pass">Tests Passed</p>
-<h3>3</h3>
+<h3>11</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -263,13 +957,13 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='100%'>
-<b>3</b> tests passed
+<div><small data-tooltip='78%'>
+<b>11</b> tests passed
 </small>
 </div>
 <div>
 <small data-tooltip='0%'><b>0</b> tests failed,
-<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+<b>3</b> skipped, <b data-tooltip='0%'>0</b> others
 </small>
 </div>
 </div>
@@ -286,10 +980,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='50%'><b>3</b> events passed</small></div>
+<div><small data-tooltip='35%'><b>11</b> events passed</small></div>
 <div>
 <small data-tooltip='0%'><b>0</b> events failed,
-<b data-tooltip='%'>3</b> others
+<b data-tooltip='%'>20</b> others
 </small>
 </div>
 </div>
@@ -305,7 +999,7 @@
 </div></div>
 <script>
 var timeline = {
-"verifySearchWithValidProduct":1.155,"verifySearchWithInvalidProduct":0.994,"verifySearchWithEmptyData":1.02
+"verifySearchWithValidProduct":0.021,"verifySearchWithInvalidProduct":0.007,"verifySearchWithEmptyData":0.002,"verifyValidLogin":0,"verifyRegisterWithRequiredFields":1.627,"verifyValidLogin":0.564,"verifyRegisterWithAllFields":1.324,"verifyRegWithExistingEmailAddress":0.944,"verifyValidLogin":0.973,"verifyRegisterWithEmptyData":0.867,"verifyInvalidLogin":0.462,"verifyInvalidEmailAndValidPassword":0.491,"verifyValidEmailAndInvalidPassword":0.594,"verifyEmptyEmailAndPassword":0.663
 };
 </script>
 <div class="row">
@@ -333,7 +1027,7 @@ var timeline = {
 </tr>
 <tr>
 <td>Java Version</td>
-<td>18.0.1.1</td>
+<td>17.0.5</td>
 </tr>
 <tr>
 <td>Username</td>
@@ -348,10 +1042,10 @@ var timeline = {
 <script>
 var statusGroup = {
 parentCount: 5,
-passParent: 3,
+passParent: 11,
 failParent: 0,
 warningParent: 0,
-skipParent: 0,
+skipParent: 3,
 childCount: 5,
 passChild: 0,
 failChild: 0,
@@ -365,11 +1059,11 @@ warningGrandChild: 0,
 skipGrandChild: 0,
 infoGrandChild: 0,
 eventsCount: 5,
-passEvents: 3,
+passEvents: 11,
 failEvents: 0,
 warningEvents: 0,
-skipEvents: 0,
-infoEvents: 3
+skipEvents: 3,
+infoEvents: 17
 };
 </script>        </div>
       </div>
