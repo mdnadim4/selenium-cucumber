@@ -1,9 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
-    <test verbose="2" preserve-order="true" name="C:/Users/Nadim/AquaProjects/selenium-ninja">
+<suite name="All Test Suite" parallel="classes" thread-count="3">
+    <listeners>
+        <listener class-name="Listeners.MyListeners"></listener>
+    </listeners>
+    <test name="Tutorials Ninja Tests">
         <classes>
-            <class name="TestCases.Login">
+            <class name="TestCases.LoginTest">
                 <methods>
                     <include name="verifyValidLogin"/>
                     <include name="verifyInvalidLogin"/>
@@ -12,7 +15,7 @@
                     <include name="verifyEmptyEmailAndPassword"/>
                 </methods>
             </class>
-            <class name="TestCases.Register">
+            <class name="TestCases.RegisterTest">
                 <methods>
                     <include name="verifyRegisterWithRequiredFields"/>
                     <include name="verifyRegisterWithAllFields"/>
@@ -20,9 +23,10 @@
                     <include name="verifyRegisterWithEmptyData"/>
                 </methods>
             </class>
-            <class name="TestCases.Search">
+            <class name="TestCases.SearchTest">
                 <methods>
-                    <include name="verifySearchWithValidProduct"/><include name="verifySearchWithInvalidProduct"/>
+                    <include name="verifySearchWithValidProduct"/>
+                    <include name="verifySearchWithInvalidProduct"/>
                     <include name="verifySearchWithEmptyData"/>
                 </methods>
             </class>
