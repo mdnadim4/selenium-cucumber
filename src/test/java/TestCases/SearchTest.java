@@ -24,6 +24,7 @@ public class SearchTest extends Base {
     public void setup() {
         log.info("Browser & Url initialize");
         driver = initializeBrowserAndUrl(prop.getProperty("browser"));
+
         log.info("Driver initialize");
         searchPage = new SearchPage(driver);
     }
