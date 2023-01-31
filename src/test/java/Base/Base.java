@@ -45,18 +45,6 @@ public class Base {
 
     public WebDriver initializeBrowserAndUrl(String browser) {
 
-        // For Grid System
-//        DesiredCapabilities dc = new DesiredCapabilities();
-//
-//        if(browser.equalsIgnoreCase("chrome")) {
-//            dc.setBrowserName("chrome");
-//        } else if (browser.equalsIgnoreCase("firefox")) {
-//            dc.setBrowserName("firefox");
-//        } else if (browser.equalsIgnoreCase("edge")) {
-//            dc.setBrowserName("edge");
-//        } else if (browser.equalsIgnoreCase("safari")) {
-//            dc.setBrowserName("safari");
-//        }
 
         if (browser.equalsIgnoreCase("chrome")) {
             ChromeOptions options = new ChromeOptions();
@@ -79,9 +67,6 @@ public class Base {
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(Utils.IMPLICIT_WAIT_TIME));
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Utils.PAGE_LOAD_TIME));
         driver.get(prop.getProperty("url"));
-
-        // For grid system
-//        driver = new RemoteWebDriver(new URL("http://localhost:4444"), dc);
 
         return driver;
 
