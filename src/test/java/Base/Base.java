@@ -45,7 +45,6 @@ public class Base {
 
     public WebDriver initializeBrowserAndUrl(String browser) {
 
-
         if (browser.equalsIgnoreCase("chrome")) {
             ChromeOptions options = new ChromeOptions();
             options.setHeadless(true);
@@ -71,6 +70,5 @@ public class Base {
         return driver;
 
     }
-
 
 }
