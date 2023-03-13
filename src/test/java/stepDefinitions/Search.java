@@ -1,11 +1,38 @@
 package stepDefinitions;
 
+import Base.Base;
+import Pages.SearchPage;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.BeforeMethod;
 
-public class Search {
+public class Search extends Base {
+
+    WebDriver driver;
+    SearchPage searchPage;
+    Logger log = LogManager.getLogger(Search.class.getName());
+
+    public Search() {
+        super();
+    }
+
+    @BeforeMethod
+    public void setup() {
+        driver = initializeBrowserAndUrl(prop.getProperty("browser"));
+
+        searchPage = new SearchPage(driver);
+    }
+
+    @AfterMethod
+    public void tearDown() {
+        driver.quit();
+    }
 
     @Given("User navigates to home page")
     public void user_navigates_to_home_page() {

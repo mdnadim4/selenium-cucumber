@@ -2,6 +2,7 @@
 
 Feature: Registration Functionality
 
+
   Scenario: User create an account with all required fields
     Given User navigates to register page
     When User enters the details into below fields
