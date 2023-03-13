@@ -56,4 +56,26 @@ public class Register extends Base {
 
     }
 
+    @When("User selects yes for newsletter")
+    public void user_selects_yes_for_newsletter() {
+
+    }
+
+    @Then("User should get proper warning message")
+    public void user_should_get_proper_warning_message() {
+
+    }
+
+    @When("User don't enter any details into input fields")
+    public void user_don_t_enter_any_details_into_input_fields() {
+
+    }
+
+    @Then("User should get proper warning message for every required input fields")
+    public void user_should_get_proper_warning_message_for_every_required_input_fields() {
+
+    }
+
+
+
 }

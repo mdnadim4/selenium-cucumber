@@ -20,7 +20,6 @@ public class SearchTest extends Base {
     @BeforeMethod
     public void setup() {
         driver = initializeBrowserAndUrl(prop.getProperty("browser"));
-
         searchPage = new SearchPage(driver);
     }
 
