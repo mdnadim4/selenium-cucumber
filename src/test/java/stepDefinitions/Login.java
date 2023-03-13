@@ -66,6 +66,12 @@ public class Login extends Base {
 
     }
 
+    @When("User dont enters any credentials")
+    public void user_dont_enters_any_credentials() {
+
+    }
+
+
 
 
 }

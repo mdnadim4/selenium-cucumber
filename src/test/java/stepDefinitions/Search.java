@@ -6,8 +6,6 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -16,7 +14,6 @@ public class Search extends Base {
 
     WebDriver driver;
     SearchPage searchPage;
-    Logger log = LogManager.getLogger(Search.class.getName());
 
     public Search() {
         super();
@@ -25,7 +22,6 @@ public class Search extends Base {
     @BeforeMethod
     public void setup() {
         driver = initializeBrowserAndUrl(prop.getProperty("browser"));
-
         searchPage = new SearchPage(driver);
     }
 
@@ -39,7 +35,7 @@ public class Search extends Base {
 
     }
     @When("User enters valid product {string} into search input field")
-    public void user_enters_valid_product_into_search_input_field(String string) {
+    public void user_enters_valid_product_into_search_input_field(String validProduct) {
 
     }
     @And("User clicks on search button")
@@ -48,6 +44,21 @@ public class Search extends Base {
     }
     @Then("User should get valid product displayed in search result")
     public void user_should_get_valid_product_displayed_in_search_result() {
+
+    }
+
+    @When("User enters invalid product {string} into search input field")
+    public void user_enters_invalid_product_into_search_input_field(String invalidProduct) {
+
+    }
+
+    @Then("User should get message about no product matching")
+    public void user_should_get_message_about_no_product_matching() {
+
+    }
+
+    @When("User enters no product into search input field")
+    public void user_enters_no_product_into_search_input_field() {
 
     }
 }
