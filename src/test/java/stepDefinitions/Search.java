@@ -30,34 +30,34 @@ public class Search extends Base {
         driver.quit();
     }
 
-    @Given("User navigates to home page")
+    @Given("^User navigates to home page$")
     public void user_navigates_to_home_page() {
 
     }
-    @When("User enters valid product {string} into search input field")
+    @When("^User enters valid product {string} into search input field$")
     public void user_enters_valid_product_into_search_input_field(String validProduct) {
 
     }
-    @And("User clicks on search button")
+    @And("^User clicks on search button$")
     public void user_clicks_on_search_button() {
 
     }
-    @Then("User should get valid product displayed in search result")
+    @Then("^User should get valid product displayed in search result$")
     public void user_should_get_valid_product_displayed_in_search_result() {
 
     }
 
-    @When("User enters invalid product {string} into search input field")
+    @When("^User enters invalid product {string} into search input field$")
     public void user_enters_invalid_product_into_search_input_field(String invalidProduct) {
 
     }
 
-    @Then("User should get message about no product matching")
+    @Then("^User should get message about no product matching$")
     public void user_should_get_message_about_no_product_matching() {
 
     }
 
-    @When("User enters no product into search input field")
+    @When("^User enters no product into search input field$")
     public void user_enters_no_product_into_search_input_field() {
 
     }

@@ -33,45 +33,42 @@ public class Login extends Base {
         driver.quit();
     }
 
-    @Given("User navigates to login page")
+    @Given("^User navigates to login page$")
     public void user_navigates_to_login_page() {
 
     }
-    @When("User enters valid email address {string}")
+    @When("^User enters valid email address (.+)$")
     public void user_enters_valid_email_address(String validEmail) {
 
     }
-    @And("User enters valid password {string}")
+    @And("^User enters valid password (.+)$")
     public void user_enters_valid_password(String validPass) {
 
     }
-    @And("User clicks on Login button")
+    @And("^User clicks on Login button$")
     public void user_clicks_on_login_button() {
 
     }
-    @Then("User should get successfully login")
+    @Then("^User should get successfully login$")
     public void user_should_get_successfully_login() {
 
     }
-    @When("User enters invalid email address {string}")
+    @When("^User enters invalid email address (.+)$")
     public void user_enters_invalid_email_address(String invalidEmail) {
 
     }
-    @And("User enters invalid password {string}")
+    @And("^User enters invalid password (.+)$")
     public void user_enters_invalid_password(String invalidPass) {
 
     }
-    @Then("User should get proper warning message {string}")
+    @Then("^User should get proper warning message (.+)$")
     public void user_should_get_proper_warning_message(String warningMsg) {
 
     }
 
-    @When("User dont enters any credentials")
+    @When("^User dont enters any credentials$")
     public void user_dont_enters_any_credentials() {
 
     }
-
-
-
 
 }
