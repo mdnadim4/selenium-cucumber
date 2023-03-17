@@ -7,7 +7,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         features = {"classpath:features"},
         glue = {"stepDefinitions"},
-        tags = "@all",
+        tags = "@login",
         dryRun = false,
 //        publish = true, // For reporting on cloud
         plugin = {

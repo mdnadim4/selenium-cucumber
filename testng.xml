@@ -1,35 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite" parallel="classes" thread-count="3">
-    <listeners>
-        <listener class-name="Listeners.MyListeners"></listener>
-    </listeners>
-    <test name="Tutorials Ninja Tests">
+
+<suite name="All Test Suite">
+    <test name="Cucumber Tests">
         <classes>
-            <class name="TestCases.LoginTest">
-                <methods>
-                    <include name="verifyValidLogin"/>
-                    <include name="verifyInvalidLogin"/>
-                    <include name="verifyInvalidEmailAndValidPassword"/>
-                    <include name="verifyValidEmailAndInvalidPassword"/>
-                    <include name="verifyEmptyEmailAndPassword"/>
-                </methods>
-            </class>
-            <class name="TestCases.RegisterTest">
-                <methods>
-                    <include name="verifyRegisterWithRequiredFields"/>
-                    <include name="verifyRegisterWithAllFields"/>
-                    <include name="verifyRegWithExistingEmailAddress"/>
-                    <include name="verifyRegisterWithEmptyData"/>
-                </methods>
-            </class>
-            <class name="TestCases.SearchTest">
-                <methods>
-                    <include name="verifySearchWithValidProduct"/>
-                    <include name="verifySearchWithInvalidProduct"/>
-                    <include name="verifySearchWithEmptyData"/>
-                </methods>
-            </class>
+            <class name="TestRunner.MyRunner" />
         </classes>
     </test>
 </suite>
