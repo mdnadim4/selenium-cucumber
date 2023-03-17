@@ -34,7 +34,7 @@ public class Search extends Base {
     public void user_navigates_to_home_page() {
 
     }
-    @When("^User enters valid product {string} into search input field$")
+    @When("^User enters valid product \"([^\"]*)\" into search input field$")
     public void user_enters_valid_product_into_search_input_field(String validProduct) {
 
     }
@@ -47,8 +47,8 @@ public class Search extends Base {
 
     }
 
-    @When("^User enters invalid product {string} into search input field$")
-    public void user_enters_invalid_product_into_search_input_field(String invalidProduct) {
+    @When("^User enters invalid product \"([^\"]*)\" into search input field$")
+    public void user_enters_invalid_product_something_into_search_input_field(String invalidProduct) {
 
     }
 

@@ -24,9 +24,7 @@ public class Register extends Base {
         driver = initializeBrowserAndUrl(prop.getProperty("browser"));
 
         registerPage = new RegisterPage(driver);
-
         registerPage.clickOnMyAccount();
-
         registerPage.clickOnRegister();
     }
 
